@@ -28,6 +28,7 @@
         <a href="#utilisation">Utilisation</a>
         <ul>
             <li><a href="#code-télécommande">Code télécommande</a></li>
+            <li><a href="#préparation-du-script-shell">Préparation du script shell</a></li>
             <li><a href="#script-python">Script python</a></li>
             <li><a href="#domoticz">Domoticz</a></li>
       </ul>
@@ -85,11 +86,25 @@ Afin d'obtenir le code télécommande nécessaire dans le script, il faut suivre
 
 2. Récupérez le code télécommande réseau qui se trouve dans les lignes de droite. Ce dernier sera à intégrer dans vos futurs scripts.
 
+### Préparation du script shell
+
+1. Dans le dossier ci-dessous, créez un nouveau script shell "exec.sh".
+   ```sh
+   /domoticz/scripts/exec.sh
+   ```
+   Ce dernier permettra de lancer nos divers scripts python sans interrompre domoticz.
+
+2. Dans ce fichier, placez les lignes de code suivantes :
+   ```sh
+    #! /bin/sh
+    /usr/bin/python /home/pi/domoticz/scripts/$1.py $2 $3 > /dev/null 2>&1 &
+   ```
+
 ### Script python
 
-1. Dans le dossier ci-dessous, créez un nouveau script python.
+1. Toujours dans le dossier "script" de domoticz, créez un nouveau script python.
    ```sh
-   /domoticz/scripts/python/
+   /domoticz/scripts/nom_du_script.py
    ```
 2. Ensuite, importez la librairie dans votre script avec la ligne suivante :
    ```Python
@@ -119,7 +134,7 @@ Afin d'obtenir le code télécommande nécessaire dans le script, il faut suivre
 4. Configurez le type de l'interrupteur en "Push On Button" puis dans "Action On" renseignez le nom de votre script python :
 
    ```Python
-     script://python/nom_du_script.py
+     script://exec.sh nom_du_script.py
    ```
 
 5. Domoticz est maintenant configuré pour éxécuter le script python à chaque fois que vous appuyerez sur l'interrupteur.
