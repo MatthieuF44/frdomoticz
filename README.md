@@ -5,7 +5,7 @@
     Le package pour simplifier le contrôle de la Freebox Révolution avec Domoticz
     <br />
     <br />
-    <a href="hhttps://github.com/MatthieuF44/frdomoticz">Exemples</a>
+    <a href="https://github.com/MatthieuF44/frdomoticz/tree/main/examples">Exemples</a>
     -
     <a href="https://github.com/MatthieuF44/frdomoticz/issues">Reporter un bug</a>
   </p>
