@@ -90,6 +90,8 @@ def button(c,t,r=1,l=False) :
     if delay > 0:
         if l == False:
             if r > 1:
+                if r > 10:
+                    delay = delay + 0.2
                 res = requests.get('http://hd1.freebox.fr/pub/remote_control?code=%i&key=%s&repeat=%i' %(c,t,r))
             else:
                 res = requests.get('http://hd1.freebox.fr/pub/remote_control?code=%i&key=%s' %(c,t))
