@@ -55,7 +55,7 @@ L'installation du package est très simple, il suffit de bien suivre les instruc
 ### Prérequis
 
 Afin d'installer le package, il est nécessaire de vérifier que Python et PIP soit bien installé.
-* Python < 3.0
+* Python > 3.0
   ```sh
   python --version
   ```
