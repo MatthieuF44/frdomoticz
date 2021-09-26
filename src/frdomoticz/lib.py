@@ -86,6 +86,24 @@ def button(c,t,r=1,l=False) :
         delay = 4
     if t == "down" or t == "up" or t == "left" or t == "right" :
         delay = 0.5
+    if t == "red" or t == "green" or t == "blue" or t == "yellow" :
+        delay = 0.5
+    if t == "power" or t == "list" or t == "tv" :
+        delay = 0.5
+    if t == "1" or t == "2" or t == "3" or t == "4" or t == "5" or t == "6" or t == "7" or t == "8" or t == "9" or t == "0" :
+        delay = 0.5
+    if t == "back" or t == "swap" :
+        delay = 0.5
+    if t == "info" or t == "epg" or t == "mail" or t == "media" or t == "help" or t == "options" or t == "pip" :
+        delay = 1
+    if t == "vol_inc" or t == "vol_dec" :
+        delay = 0.5
+    if t == "prgm_inc" or t == "prgm_dec" :
+        delay = 0.5
+    if t == "mute" or t == "home"  or t == "rec" :
+        delay = 0.5
+    if t == "bwd" or t == "prev"  or t == "play"  or t == "fwd"  or t == "next" :
+        delay = 0.5
 
     if delay > 0:
         if l == False:
